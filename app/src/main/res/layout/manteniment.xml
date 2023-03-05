@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grisblau"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/itv"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <EditText
+            android:id="@+id/et_matricula"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Matrícula"
+            android:textColorHint="@color/black"
+            android:ems="10"
+            android:textColor="@color/white"/>
+
+        <EditText
+            android:id="@+id/et_model"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Model"
+            android:textColorHint="@color/black"
+            android:ems="10"
+            android:textColor="@color/white"/>
+
+        <EditText
+            android:id="@+id/et_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Color"
+            android:textColorHint="@color/black"
+            android:ems="10"
+            android:textColor="@color/white"/>
+
+        <EditText
+            android:id="@+id/et_any_itv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Any ITV"
+            android:textColorHint="@color/black"
+            android:ems="10"
+            android:textColor="@color/white"/>
+        <Button
+            android:id="@+id/btn_afegir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/black"
+            android:text="Afegir"/>
+
+        <Button
+            android:id="@+id/btn_menuPrincipal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/black"
+            android:text="Tornar al menu"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>
