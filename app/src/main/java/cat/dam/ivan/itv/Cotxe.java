@@ -25,6 +25,9 @@ public class Cotxe
         this.anyItv = anyItv;
     }
 
+    public int getId() {
+        return id;
+    }
 
     public String getMatricula() {
         return matricula;

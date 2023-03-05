@@ -54,9 +54,14 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         db.execSQL("DELETE FROM " + TABLE_NAME + " WHERE " + COLUMN_MATRICULA + "=\"" + matricula + "\";");
     }
 
-    public void updateCar(Cotxe item){
+    public void updateCotxe(Cotxe item){
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_MATRICULA, item.getMatricula());
+        values.put(COLUMN_MODEL, item.getModel());
+        values.put(COLUMN_COLOR, item.getColor());
+        values.put(COLUMN_ANYITV, item.getAnyItv());
         SQLiteDatabase db = this.getWritableDatabase();
-        db.execSQL("UPDATE " + TABLE_NAME + " SET " + COLUMN_MODEL + "=\"" + item.getModel() + "\", " + COLUMN_COLOR + "=\"" + item.getColor() + "\", " + COLUMN_ANYITV + "=\"" + item.getAnyItv() + "\" WHERE " + COLUMN_MATRICULA + "=\"" + item.getMatricula() + "\";");
+        db.update(TABLE_NAME, values, COLUMN_MATRICULA + " = ?", new String[] { String.valueOf(item.getMatricula()) });
     }
 
     public ArrayList<Cotxe> getCars(){
