@@ -65,11 +65,11 @@ public class CustomRecyclerViewItv extends RecyclerView.Adapter<ViewHolderItv> i
     //Mostra el diàleg d'edició que permet editar un contacte
     private void showEditionDialog(final Cotxe item){
         LayoutInflater inflater = LayoutInflater.from(context);
-        View subView = inflater.inflate(R.layout.dialog_update_cotxe, null);
-        final EditText et_matricula = subView.findViewById(R.id.et_matricula);
-        final EditText et_model = subView.findViewById(R.id.et_model);
-        final EditText et_color = subView.findViewById(R.id.et_color);
-        final EditText et_itv = subView.findViewById(R.id.et_itv);
+        View subView = inflater.inflate(R.layout.dialog_update_cotxe_itv, null);
+        final EditText et_matricula = subView.findViewById(R.id.et_mat);
+        final EditText et_model = subView.findViewById(R.id.et_mod);
+        final EditText et_color = subView.findViewById(R.id.et_col);
+        final EditText et_itv = subView.findViewById(R.id.et_newItv);
         if(item != null)
         {
             et_matricula.setText(item.getMatricula());

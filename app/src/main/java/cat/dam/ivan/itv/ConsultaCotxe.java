@@ -2,11 +2,14 @@ package cat.dam.ivan.itv;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -28,7 +31,7 @@ public class ConsultaCotxe extends AppCompatActivity
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.cotxe_itv_caducada);
+        setContentView(R.layout.consulta_cotxe);
         initViews();
         initListeners();
         initRecyclerView();
@@ -74,6 +77,32 @@ public class ConsultaCotxe extends AppCompatActivity
 
 
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        MenuItem search = menu.findItem(R.id.search);
+        SearchView searchView =  (SearchView) search.getActionView();
+        search(searchView);
+        return true;
+    }
+
+    private void search(SearchView searchView) {
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+            @Override
+            public boolean onQueryTextChange(String nouText) {
+                if (mAdapter!=null)
+                    mAdapter.getFilter().filter(nouText);
+                return true;
+            }
+        });
+    }
+
+
 
 
 }

@@ -5,20 +5,35 @@
     android:background="@color/grisblau"
     android:orientation="vertical">
 
-    <ImageView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:src="@drawable/itv"/>
-
-    <Button
-        android:id="@+id/btnAcceptar"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Acceptar"/>
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/itv"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@color/green"
+            android:fontFamily="@font/petit_formal_script"
+            android:padding="10dp"
+            android:text="COTXES ITV CADUCADA"
+            android:textColor="@color/maroon"
+            android:textSize="25sp"/>
+
+
+    </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
         android:layout_marginBottom="25dp"
         android:orientation="vertical"
         android:gravity="center">
