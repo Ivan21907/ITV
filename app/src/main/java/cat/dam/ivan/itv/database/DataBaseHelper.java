@@ -61,7 +61,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         values.put(COLUMN_COLOR, item.getColor());
         values.put(COLUMN_ANYITV, item.getAnyItv());
         SQLiteDatabase db = this.getWritableDatabase();
-        db.update(TABLE_NAME, values, COLUMN_MATRICULA + " = ?", new String[] { String.valueOf(item.getMatricula()) });
+        db.update(TABLE_NAME, values, COLUMN_MATRICULA + " = ?", new String[] { item.getMatricula() });
     }
 
     public ArrayList<Cotxe> getCars(){

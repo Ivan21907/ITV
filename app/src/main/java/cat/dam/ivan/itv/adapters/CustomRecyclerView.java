@@ -115,7 +115,7 @@ public class CustomRecyclerView extends RecyclerView.Adapter<ViewHolder> impleme
             et_itv.setText(item.getAnyItv());
         }
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
-        alertDialog.setTitle(R.string.contact_edition);
+        alertDialog.setTitle(R.string.cotxe_edition);
         alertDialog.setView(subView);
         alertDialog.create();
         alertDialog.setPositiveButton(R.string.edit_car, (dialog, which) -> {

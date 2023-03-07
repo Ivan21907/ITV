@@ -2,20 +2,23 @@
 <resources>
     <string name="app_name">ITV</string>
     <string name="find">Cerca</string>
-    <string name="enter_name">Entri la matricula</string>
-    <string name="enter_phone">Entri el model</string>
+    <string name="enter_matricula">Entri la matricula</string>
+    <string name="enter_model">Entri el model</string>
     <string name="enter_color">Entri el color</string>
     <string name="enter_itv">Entri any itv</string>
-    <string name="no_contacts">No hi ha contactes a la base de dades. Podeu afegir-ne</string>
-    <string name="noadd_error">Error. No s\'ha afegit contacte. Hi havia algun valor buit</string>
-    <string name="new_contact">Nou contacte</string>
-    <string name="add_contact">AFEGIR CONTACTE</string>
-    <string name="contact_edition">Edició de contacte</string>
+    <string name="no_cotxes">No hi ha cotxes en la base de dades. Podeu afegir-ne</string>
+    <string name="no_cotxes_itv">No hi ha cotxes amb itv caducada. Tot al dia!</string>
+    <string name="new_car">Cotxe afegit</string>
+    <string name="noadd_error">Error. No s\'ha afegit el cotxe. Hi havia algun valor buit</string>
+    <string name="new_cotxe">Nou Cotxe</string>
+    <string name="add_cotxe">AFEGIR COTXE</string>
+    <string name="cotxe_edition">Edició de cotxe</string>
     <string name="edit_car">MOFIFICAR COTXE</string>
     <string name="cancel">CANCEL·LAR</string>
     <string name="cancelled_task">Tasca cancel·lada</string>
-    <string name="contact_null">Contacte nul</string>
+    <string name="contact_null">Cotxe nul</string>
     <string name="add">Add</string>
     <string name="delete">delete</string>
     <string name="edit">edit</string>
+    <string name="back">Tornar al menu</string>
 </resources>

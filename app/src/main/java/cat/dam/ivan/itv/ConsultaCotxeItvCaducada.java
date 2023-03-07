@@ -66,7 +66,7 @@ public class ConsultaCotxeItvCaducada extends AppCompatActivity
             rc_nameList.setAdapter(mAdapter);
         }else{
             rc_nameList.setVisibility(View.GONE);
-            Toast.makeText(this, "No hi ha cotxes amb matricula caducada", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.no_cotxes_itv, Toast.LENGTH_SHORT).show();
 
         }
 

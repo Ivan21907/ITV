@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -49,6 +50,7 @@ public class MantenimentActivity extends AppCompatActivity
                 String anyItv = etAnyItv.getText().toString();
                 Cotxe cotxe = new Cotxe(matricula, model, color, anyItv);
                 dataBaseHelper.addCar(cotxe);
+                Toast.makeText(MantenimentActivity.this, R.string.new_car, Toast.LENGTH_SHORT).show();
             }
         });
 
