@@ -1,7 +1,9 @@
 package cat.dam.ivan.itv;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +18,7 @@ import cat.dam.ivan.itv.database.DataBaseHelper;
 public class ConsultaCotxe extends AppCompatActivity
 {
 
+    private Button btnBack;
     private CustomRecyclerView mAdapter;
     private RecyclerView rc_nameList;
     private DataBaseHelper dataBaseHelper;
@@ -27,6 +30,7 @@ public class ConsultaCotxe extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cotxe_itv_caducada);
         initViews();
+        initListeners();
         initRecyclerView();
         initDataBaseHelper();
 
@@ -34,7 +38,19 @@ public class ConsultaCotxe extends AppCompatActivity
 
     private void initViews() {
         rc_nameList = findViewById(R.id.rc_nameList);
+        btnBack = findViewById(R.id.btn_menuPrincipal);
     }
+
+    private void initListeners() {
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ConsultaCotxe.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
 
     private void initRecyclerView() {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
