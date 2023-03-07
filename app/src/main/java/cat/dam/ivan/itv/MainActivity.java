@@ -36,13 +36,13 @@ public class MainActivity extends AppCompatActivity
                 startActivity(intent);
             }
         });
-        /*btnConsulta.setOnClickListener(new View.OnClickListener() {
+        btnConsulta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ConsultaCotxes.class);
+                Intent intent = new Intent(MainActivity.this, ConsultaCotxe.class);
                 startActivity(intent);
             }
-        });*/
+        });
         btnItvCaducada.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

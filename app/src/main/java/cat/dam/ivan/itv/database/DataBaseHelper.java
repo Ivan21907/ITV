@@ -49,9 +49,9 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, values);
     }
 
-    public void deleteCar(String matricula){
+    public void deleteCotxe(int id){
         SQLiteDatabase db = this.getWritableDatabase();
-        db.execSQL("DELETE FROM " + TABLE_NAME + " WHERE " + COLUMN_MATRICULA + "=\"" + matricula + "\";");
+        db.delete(TABLE_NAME, COLUMN_ID + "	= ?", new String[] { String.valueOf(id)});
     }
 
     public void updateCotxe(Cotxe item){
@@ -67,11 +67,16 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public ArrayList<Cotxe> getCars(){
         ArrayList<Cotxe> cars = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
-        String query = "SELECT matricula FROM " + TABLE_NAME;
+        String query = "SELECT * FROM " + TABLE_NAME;
         Cursor cursor = db.rawQuery(query, null);
         if(cursor.moveToFirst()){
             do{
-                Cotxe car = new Cotxe(cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4));
+                int id = Integer.parseInt(cursor.getString(0));
+                String matricula = cursor.getString(1);
+                String model = cursor.getString(2);
+                String color = cursor.getString(3);
+                String anyItv = cursor.getString(4);
+                Cotxe car = new Cotxe(id, matricula, model, color, anyItv);
                 cars.add(car);
             }while(cursor.moveToNext());
         }
