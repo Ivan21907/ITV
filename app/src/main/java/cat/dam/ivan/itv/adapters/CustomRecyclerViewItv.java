@@ -21,7 +21,7 @@ import cat.dam.ivan.itv.Cotxe;
 import cat.dam.ivan.itv.R;
 import cat.dam.ivan.itv.database.DataBaseHelper;
 
-public class CustomRecyclerViewItv extends RecyclerView.Adapter<ViewHolderItv> implements Filterable{
+public class CustomRecyclerViewItv extends RecyclerView.Adapter<ViewHolderItv>{
     private Context context;
     private ArrayList<Cotxe> dataSet;
     private ArrayList<Cotxe> itemList;
@@ -33,12 +33,6 @@ public class CustomRecyclerViewItv extends RecyclerView.Adapter<ViewHolderItv> i
         this.dataSet = dataSet;
         this.itemList = dataSet;
         databaseHelper = new DataBaseHelper(context);
-    }
-
-
-    @Override
-    public Filter getFilter() {
-        return null;
     }
 
     @NonNull
