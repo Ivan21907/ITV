@@ -22,6 +22,7 @@ import cat.dam.ivan.itv.R;
 import cat.dam.ivan.itv.database.DataBaseHelper;
 
 public class CustomRecyclerView extends RecyclerView.Adapter<ViewHolder> implements Filterable{
+    //Atributs
     private Context context;
     private ArrayList<Cotxe> dataSet;
     private ArrayList<Cotxe> itemList;
@@ -35,10 +36,11 @@ public class CustomRecyclerView extends RecyclerView.Adapter<ViewHolder> impleme
         databaseHelper = new DataBaseHelper(context);
     }
 
-
+    //Mètode que retorna el número d'elements que te la llista segons el tipus de dades que li diguem que busqui
     @Override
     public Filter getFilter() {
         return new Filter() {
+            //metode que executa el filtre
             @Override
             protected FilterResults performFiltering(CharSequence charSequence) {
                 String charString = charSequence.toString();
@@ -71,6 +73,7 @@ public class CustomRecyclerView extends RecyclerView.Adapter<ViewHolder> impleme
 
     }
 
+    //Mètode que crea la vista de cada cardView
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -78,10 +81,12 @@ public class CustomRecyclerView extends RecyclerView.Adapter<ViewHolder> impleme
         return new ViewHolder(view);
     }
 
+    //Mètode que dona valor als elements de cada cardView
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
         //Donem valor als views de cada card mitjançant el ViewHolder
         final Cotxe cotxes = dataSet.get(position);
+        //mostrem les matricules de cada cotxe
         holder.getMatricula().setText(cotxes.getMatricula());
         holder.getEditImg().setOnClickListener(view -> showEditionDialog(cotxes));
         holder.getDeleteImg().setOnClickListener(view -> {
@@ -94,12 +99,13 @@ public class CustomRecyclerView extends RecyclerView.Adapter<ViewHolder> impleme
 
     }
 
+    //Mètode que retorna el número d'elements que te la llista
     @Override
     public int getItemCount() {
         return dataSet.size();
     }
 
-    //Mostra el diàleg d'edició que permet editar un contacte
+    //Mostra el diàleg d'edició que permet editar un cotxe
     private void showEditionDialog(final Cotxe item){
         LayoutInflater inflater = LayoutInflater.from(context);
         View subView = inflater.inflate(R.layout.dialog_update_cotxe, null);
@@ -135,7 +141,7 @@ public class CustomRecyclerView extends RecyclerView.Adapter<ViewHolder> impleme
                     context.startActivity(((Activity) context).getIntent());
                 }
                 else {
-                    Toast.makeText(context, R.string.contact_null, Toast.LENGTH_LONG).show();
+                    Toast.makeText(context, R.string.car_null, Toast.LENGTH_LONG).show();
                 }
             }
         });

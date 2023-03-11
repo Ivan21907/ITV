@@ -15,10 +15,12 @@ import cat.dam.ivan.itv.database.DataBaseHelper;
 public class MantenimentActivity extends AppCompatActivity
 {
 
+    //Atributs
     private EditText etMatricula, etModel, etColor, etAnyItv;
     private Button btnAfegir, btnTornarMenu;
     private DataBaseHelper dataBaseHelper;
 
+    //metode onCreate que s'executa quan s'obre l'activitat
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -31,6 +33,7 @@ public class MantenimentActivity extends AppCompatActivity
 
     }
 
+    //metode que inicialitza els elements de la vista
     private void initViews() {
         etMatricula = findViewById(R.id.et_matricula);
         etModel = findViewById(R.id.et_model);
@@ -40,6 +43,7 @@ public class MantenimentActivity extends AppCompatActivity
         btnTornarMenu = findViewById(R.id.btn_menuPrincipal);
     }
 
+    //metode que inicialitza els listeners dels elements de la vista
     private void initListeners() {
         btnAfegir.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,6 +67,7 @@ public class MantenimentActivity extends AppCompatActivity
         });
     }
 
+    //metode que inicialitza el DataBaseHelper
     private void initDataBaseHelper() {
         dataBaseHelper = new DataBaseHelper(this);
     }

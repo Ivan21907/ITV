@@ -2,12 +2,14 @@ package cat.dam.ivan.itv;
 
 public class Cotxe
 {
+    //Atributs
     private int id;
     private String matricula;
     private String model;
     private String color;
     private String anyItv;
 
+    //Constructors
     public Cotxe(int id, String matricula, String model, String color, String anyItv)
     {
         this.id = id;
@@ -25,6 +27,7 @@ public class Cotxe
         this.anyItv = anyItv;
     }
 
+    //Getters i Setters
     public int getId() {
         return id;
     }

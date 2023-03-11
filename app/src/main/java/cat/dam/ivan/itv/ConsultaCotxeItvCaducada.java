@@ -17,14 +17,15 @@ import cat.dam.ivan.itv.database.DataBaseHelper;
 
 public class ConsultaCotxeItvCaducada extends AppCompatActivity
 {
+    //Atributs
     private Button btnBack;
     private CustomRecyclerViewItv mAdapter;
     private RecyclerView rc_nameList;
     private DataBaseHelper dataBaseHelper;
 
 
+    //metode onCreate que s'executa quan s'obre l'activitat
     @Override
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cotxe_itv_caducada);
@@ -35,11 +36,13 @@ public class ConsultaCotxeItvCaducada extends AppCompatActivity
 
     }
 
+    //metode que inicialitza els elements de la vista
     private void initViews() {
         rc_nameList = findViewById(R.id.rc_nameList);
         btnBack = findViewById(R.id.btn_menuPrincipal);
     }
 
+    //metode que inicialitza els listeners dels elements de la vista
     private void initListeners() {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +53,7 @@ public class ConsultaCotxeItvCaducada extends AppCompatActivity
         });
     }
 
+    //metode que inicialitza el RecyclerView
     private void initRecyclerView() {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         rc_nameList.setLayoutManager(linearLayoutManager);
@@ -57,6 +61,7 @@ public class ConsultaCotxeItvCaducada extends AppCompatActivity
 
     }
 
+    //metode que inicialitza la base de dades i carrega els cotxes que tenen la ITV caducada
     private void initDataBaseHelper() {
         dataBaseHelper = new DataBaseHelper(this);
         ArrayList<Cotxe> cotxesItv = dataBaseHelper.getCarsItv();

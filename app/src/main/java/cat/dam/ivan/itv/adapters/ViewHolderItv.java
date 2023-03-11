@@ -11,6 +11,7 @@ public class ViewHolderItv extends RecyclerView.ViewHolder {
     private final TextView matricula;
     private final ImageView img_edit;
 
+    //Constructor
     public ViewHolderItv(View itemView) {
         super(itemView);
         matricula = itemView.findViewById(R.id.tv_matricula);

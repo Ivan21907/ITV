@@ -10,8 +10,10 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity
 {
 
+    //Atributs
     private Button btnManteniment, btnConsulta, btnItvCaducada;
 
+    //metode onCreate que s'executa quan s'obre l'activitat
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,12 +23,14 @@ public class MainActivity extends AppCompatActivity
 
     }
 
+    //metode que inicialitza els elements de la vista
     private void initViews() {
         btnManteniment = findViewById(R.id.btn_manteniment);
         btnConsulta = findViewById(R.id.btn_consulta);
         btnItvCaducada = findViewById(R.id.btn_itv_caducada);
     }
 
+    //metode que inicialitza els listeners dels elements de la vista
     private void initListeners() {
         btnManteniment.setOnClickListener(new View.OnClickListener() {
             @Override

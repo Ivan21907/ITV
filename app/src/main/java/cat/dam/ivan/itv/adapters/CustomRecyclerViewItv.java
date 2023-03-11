@@ -22,6 +22,7 @@ import cat.dam.ivan.itv.R;
 import cat.dam.ivan.itv.database.DataBaseHelper;
 
 public class CustomRecyclerViewItv extends RecyclerView.Adapter<ViewHolderItv>{
+    //Atributs
     private Context context;
     private ArrayList<Cotxe> dataSet;
     private ArrayList<Cotxe> itemList;
@@ -35,6 +36,7 @@ public class CustomRecyclerViewItv extends RecyclerView.Adapter<ViewHolderItv>{
         databaseHelper = new DataBaseHelper(context);
     }
 
+    //Mètode que crea la vista de cada cardView
     @NonNull
     @Override
     public ViewHolderItv onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -42,21 +44,24 @@ public class CustomRecyclerViewItv extends RecyclerView.Adapter<ViewHolderItv>{
         return new ViewHolderItv(view);
     }
 
+    //Aquest mètode és el que s'encarrega de donar valor als views de cada card
     public void onBindViewHolder(@NonNull ViewHolderItv holder, int position) {
 
         //Donem valor als views de cada card mitjançant el ViewHolder
         final Cotxe cotxes = dataSet.get(position);
+        //mostrem la matricula del cotxe amb la ITV caducada
         holder.getMatricula().setText(cotxes.getMatricula());
         holder.getEditImg().setOnClickListener(view -> showEditionDialog(cotxes));
 
     }
 
+    //Retorna el número d'elements que té la llista
     @Override
     public int getItemCount() {
         return dataSet.size();
     }
 
-    //Mostra el diàleg d'edició que permet editar un contacte
+    //Mostra el diàleg d'edició que permet editar un cotxe amb la seva ITV caducada
     private void showEditionDialog(final Cotxe item){
         LayoutInflater inflater = LayoutInflater.from(context);
         View subView = inflater.inflate(R.layout.dialog_update_cotxe_itv, null);
@@ -92,7 +97,7 @@ public class CustomRecyclerViewItv extends RecyclerView.Adapter<ViewHolderItv>{
                     context.startActivity(((Activity) context).getIntent());
                 }
                 else {
-                    Toast.makeText(context, R.string.contact_null, Toast.LENGTH_LONG).show();
+                    Toast.makeText(context, R.string.car_null, Toast.LENGTH_LONG).show();
                 }
             }
         });

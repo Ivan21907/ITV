@@ -15,6 +15,7 @@ public class ViewHolder extends RecyclerView.ViewHolder
     private final ImageView img_delete;
     private final ImageView img_edit;
 
+    //Constructor
     public ViewHolder(View itemView)
     {
         super(itemView);

@@ -20,15 +20,15 @@ import cat.dam.ivan.itv.database.DataBaseHelper;
 
 public class ConsultaCotxe extends AppCompatActivity
 {
-
+    //Atributs
     private Button btnBack;
     private CustomRecyclerView mAdapter;
     private RecyclerView rc_nameList;
     private DataBaseHelper dataBaseHelper;
 
 
+    //metode onCreate que s'executa quan s'obre l'activitat
     @Override
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.consulta_cotxe);
@@ -39,11 +39,13 @@ public class ConsultaCotxe extends AppCompatActivity
 
     }
 
+    //metode que inicialitza els elements de la vista
     private void initViews() {
         rc_nameList = findViewById(R.id.rc_nameList);
         btnBack = findViewById(R.id.btn_menuPrincipal);
     }
 
+    //metode que inicialitza els listeners dels elements de la vista
     private void initListeners() {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,7 +56,7 @@ public class ConsultaCotxe extends AppCompatActivity
         });
     }
 
-
+    //metode que inicialitza el RecyclerView
     private void initRecyclerView() {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         rc_nameList.setLayoutManager(linearLayoutManager);
@@ -62,6 +64,7 @@ public class ConsultaCotxe extends AppCompatActivity
 
     }
 
+    //metode que inicialitza la base de dades
     private void initDataBaseHelper() {
         dataBaseHelper = new DataBaseHelper(this);
         ArrayList<Cotxe> cotxes = dataBaseHelper.getCars();
@@ -78,6 +81,7 @@ public class ConsultaCotxe extends AppCompatActivity
 
     }
 
+    //metode que crea el menu de la vista
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
@@ -87,12 +91,14 @@ public class ConsultaCotxe extends AppCompatActivity
         return true;
     }
 
+    //metode que crea el listener del menu de la vista
     private void search(SearchView searchView) {
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 return false;
             }
+            //metode que filtra els cotxes segons el text que es busca
             @Override
             public boolean onQueryTextChange(String nouText) {
                 if (mAdapter!=null)
